@@ -1,11 +1,13 @@
 import random
 play_again = True
+#Welcomes the player, runs player count and roll count function and see's if a new game wants to be started
 def main():
     print ("Welcome to the Dice Game!")
     player_count_and_rolls()
     if new_game() is not True:
         exit()
 
+#calculates dice totals
 def dice_total(dice_count):
     roll = 0
     total_roll = 0
@@ -15,6 +17,7 @@ def dice_total(dice_count):
         print(f"Roll {dice + 1}: {dice_roll}")
     return total_roll
 
+#calculates the winner based on dice_totals
 def winner(player_totals):
     high_score = 0
     tie = 0
@@ -34,7 +37,8 @@ def winner(player_totals):
     else:
         winner = ", ".join(tied_players)
         print(f"{winner} Tied!")
-#testing
+        
+#capture player and roll counts
 def player_count_and_rolls():
     player_list = []
     player_totals = {}
@@ -61,6 +65,7 @@ def player_count_and_rolls():
         print(f"{players} Total: {player_totals[players]}")
     winner(player_totals)
 
+#Determines if players want to play a new game
 def new_game():
     new_game = input("Would you like to play again?").lower()
     if (new_game == "y") or (new_game == "yes"):
