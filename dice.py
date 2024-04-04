@@ -34,7 +34,6 @@ def winner(player_totals):
     else:
         winner = ", ".join(tied_players)
         print(f"{winner} Tied!")
-#need to add some input exception handling
 def player_count_and_rolls():
     player_list = []
     player_totals = {}
